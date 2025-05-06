@@ -1,0 +1,31 @@
+﻿@model CustomerViewModel
+
+<div class="container">
+    <h2>Customers</h2>
+    <p>Total Customers: @Model.CustomerCount</p>
+    <table class="table-bordered table-striped table">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Company Name</th>
+                <th>Last Name</th>
+                <th>Contact Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model.Customers!)
+            {
+                var fullName = customer.ContactName;
+                var splitName = fullName!.Split(' ');
+                var lastName = splitName[splitName.Length - 1];
+
+                <tr>
+                    <td>@customer.CustomerID</td>
+                    <td>@customer.CompanyName</td>
+                    <td>@lastName</td>
+                    <td>@customer.ContactTitle</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

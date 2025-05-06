@@ -1,0 +1,22 @@
+﻿
+@{
+    var username = Context.Session.GetString("Username");
+}
+
+@if (string.IsNullOrEmpty(username))
+{
+    <ul class="d-flex justify-content-end gap-4">
+        <li class="list-group-item">
+            <a class="text-light" asp-area="" asp-controller="Account" asp-action="Index">Sign In</a>
+        </li>
+    </ul>
+}
+else
+{
+    <!-- Show Welcome message and Logout button if the user is logged in -->
+    <div class="d-flex justify-content-end gap-4">
+        <p>Welcome, @username</p>
+        
+        <a href="@Url.Action("Logout", "Account")" class="btn btn-danger btn-sm ml-2">Logout</a>
+    </div>
+}

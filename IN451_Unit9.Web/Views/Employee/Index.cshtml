@@ -1,0 +1,32 @@
+﻿@model EmployeeViewModel
+
+
+<div class="container">
+    <h2>Employees</h2>
+    <p>Total Employees: @Model.EmployeeCount</p>
+    <table class="table-bordered table-striped table">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Title</th>
+                <th>Hire Date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model.Employees!)
+            {
+                <tr>
+                    <td>@employee.EmployeeID</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.Title</td>
+                    <td>@employee.HireDate</td>
+                    <td>@employee.Salary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

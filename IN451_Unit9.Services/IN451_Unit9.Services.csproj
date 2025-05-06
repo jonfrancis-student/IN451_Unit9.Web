@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IN451_Unit9.DataAccess\IN451_Unit9.DataAccess.csproj" />
+    <ProjectReference Include="..\IN451_Unit9.Models\IN451_Unit9.Models.csproj" />
+  </ItemGroup>
+
+</Project>

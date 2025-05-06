@@ -1,0 +1,41 @@
+﻿@model IN451_Unit9.Models.Config.SqlConnectionInfo
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+    <h2>Login</h2>
+
+    <form asp-action="Login" method="post">
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+        <div class="form-group">
+            <label for="Server">Server</label>
+            <input type="text" class="form-control" id="Server" name="Server" required />
+            <span asp-validation-for="Server" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Database">Database</label>
+            <input type="text" class="form-control" id="Database" name="Database" required />
+            <span asp-validation-for="Database" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="User">Username</label>
+            <input type="text" class="form-control" id="User" name="User" required />
+            <span asp-validation-for="User" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" id="Password" name="Password" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <button type="submit" class="btn btn-primary mt-5">Login</button>
+    </form>
+</div>

@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.3.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\IN451_Unit9.DataAccess\IN451_Unit9.DataAccess.csproj" />
+		<ProjectReference Include="..\IN451_Unit9.Models\IN451_Unit9.Models.csproj" />
+		<ProjectReference Include="..\IN451_Unit9.Services\IN451_Unit9.Services.csproj" />
+	</ItemGroup>
 </Project>

@@ -1,0 +1,32 @@
+﻿@model OrderViewModel
+
+
+<div class="container">
+    <h2>Orders</h2>
+    <p>Total Orders: @Model.OrderCount</p>
+    <table class="table-bordered table-striped table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Employee ID</th>
+                <th>Order Date</th>
+                <th>Required Date</th>
+                <th>Shipped Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders!)
+            {
+                <tr>
+                    <td>@order.OrderID</td>
+                    <td>@order.CustomerID</td>
+                    <td>@order.EmployeeID</td>
+                    <td>@order.OrderDate</td>
+                    <td>@order.RequiredDate</td>
+                    <td>@order.ShippedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
