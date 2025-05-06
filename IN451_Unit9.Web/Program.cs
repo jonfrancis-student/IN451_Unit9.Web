@@ -17,6 +17,9 @@ builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+    options.Cookie.HttpOnly = true;                  // Prevent JS access
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Enforce HTTPS
+    options.Cookie.SameSite = SameSiteMode.Strict;   // Prevent CSRF-like use
 });
 
 

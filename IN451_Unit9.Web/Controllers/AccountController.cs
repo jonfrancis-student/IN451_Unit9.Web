@@ -27,6 +27,7 @@ namespace IN451_Unit9.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Login(SqlConnectionInfo model)
         {
             if (ModelState.IsValid)
@@ -52,7 +53,7 @@ namespace IN451_Unit9.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    TempData["ErrorMessage"] = $"An error occurred: {ex.Message}";
+                    TempData["ErrorMessage"] = $"Login Failed. Please try again.";
 
                 }
             }

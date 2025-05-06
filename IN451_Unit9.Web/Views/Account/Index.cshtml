@@ -14,7 +14,7 @@
                 @TempData["ErrorMessage"]
             </div>
         }
-
+        @Html.AntiForgeryToken()
         <div class="form-group">
             <label for="Server">Server</label>
             <input type="text" class="form-control" id="Server" name="Server" required />
